@@ -5,7 +5,9 @@ This project will be a software for restaurants, this software will handle Gener
 
 The architecture is:
 
-<img src="\UML Diagram.jpg">
+
+![UML](./src/model/UML%20Diagram.jpg?raw=true)  
+
 
 
   
