@@ -1,11 +1,11 @@
 package model.inventory;
 
 /**
- * This class will be use in the inventory and wil be use in products for the preparation
+ * This class will be used for the inventory and final products preparation
  */
 public class Ingredient{
     int id;
     String name;
     Double stock;
-
+ s
 }
