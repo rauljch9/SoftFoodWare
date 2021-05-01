@@ -27,6 +27,13 @@ public abstract class Order {
         return null;
     }
 
+    /**
+     * @return this method calculates the estimated preparation time of the whole order
+     */
+    public Double getEstimatedPreparationTime(){
+        return null;
+    }
+
     public int getId() {
         return id;
     }
