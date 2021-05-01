@@ -19,6 +19,14 @@ public abstract class Order {
      * Subclasses must implement this method
      */
     public abstract Double getPrice();
+
+    /**
+     * @return The price of the list of products
+     */
+    protected Double getProductListPrice(){
+        return null;
+    }
+
     public int getId() {
         return id;
     }
