@@ -13,6 +13,12 @@ public abstract class Order {
     Client client;
     List<OrderDetail> orderDetailList;
     String note;
+
+    /**
+     * @return Total price of the order, ir includes every extra cost.
+     * Subclasses must implement this method
+     */
+    public abstract Double getPrice();
     public int getId() {
         return id;
     }
