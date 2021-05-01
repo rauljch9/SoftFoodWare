@@ -7,4 +7,12 @@ import model.persons.Person;
  */
 public class Client extends Person {
     String defaultDeliveryAddress;
+
+    public String getDefaultDeliveryAddress() {
+        return defaultDeliveryAddress;
+    }
+
+    public void setDefaultDeliveryAddress(String defaultDeliveryAddress) {
+        this.defaultDeliveryAddress = defaultDeliveryAddress;
+    }
 }
