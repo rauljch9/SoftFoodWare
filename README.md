@@ -5,5 +5,7 @@ SoftFoodWare will be a solution for restaurants capable of controlling orders, o
 
 The architecture so far is:
 
+![UML](./src/model/GeneralDiagram.jpg?raw=true)
 
+# UML
 ![UML](./src/model/UML.jpg?raw=true)  
