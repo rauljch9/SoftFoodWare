@@ -62,11 +62,7 @@ public class Order {
     public void setOrderDetailList(Collection<OrderDetail> orderDetailList) {
         this.orderDetailList = orderDetailList;
     }
-
-    public void addOrderDetail(OrderDetail orderDetail) {
-        this.orderDetailList.add(orderDetail);
-    }
-
+    
     public String getNote() {
         return note;
     }
