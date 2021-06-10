@@ -19,7 +19,7 @@ public class Order {
     /**
      * @return The price of the list of products
      */
-    protected Double getProductListPrice(){
+    public Double getProductListPrice(){
         Double totalPrice = 0.0;
         for (OrderDetail orderDetail: orderDetailList) {
             totalPrice+=orderDetail.getProduct().getPrice();
