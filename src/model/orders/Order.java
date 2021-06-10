@@ -28,10 +28,15 @@ public class Order {
     }
 
     /**
-     * @return this method calculates the estimated preparation time of the whole order
+     * @return this method calculates the estimated preparation time of the whole order. Estimated preparation time expressed in minutes.
      */
     public Double getEstimatedPreparationTime(){
-        return null;
+        Double estimatedPreparationTime=0.0;
+        for (OrderDetail orderDetail :
+                this.orderDetailList) {
+            estimatedPreparationTime+=orderDetail.getProduct().getPreparationTime();
+        }
+        return estimatedPreparationTime;
     }
 
     public Integer getId() {
