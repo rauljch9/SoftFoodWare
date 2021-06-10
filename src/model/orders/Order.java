@@ -11,7 +11,7 @@ import java.util.Collection;
  * The Order Class has this Client and the list of OrderDetail (list of product and quantity)
  */
 public class Order {
-    Integer id;
+    Long id;
     Client client;
     Collection<OrderDetail> orderDetailList;
     String note;
@@ -39,11 +39,11 @@ public class Order {
         return estimatedPreparationTime;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -62,7 +62,7 @@ public class Order {
     public void setOrderDetailList(Collection<OrderDetail> orderDetailList) {
         this.orderDetailList = orderDetailList;
     }
-    
+
     public String getNote() {
         return note;
     }
