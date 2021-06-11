@@ -11,7 +11,7 @@ import java.util.Collection;
  * The Order Class has this Client and the list of OrderDetail (list of product and quantity)
  */
 public class Order {
-    Integer id;
+    Long id;
     Client client;
     Collection<OrderDetail> orderDetailList;
     String note;
@@ -19,7 +19,7 @@ public class Order {
     /**
      * @return The price of the list of products
      */
-    protected Double getProductListPrice(){
+    public Double getProductListPrice(){
         Double totalPrice = 0.0;
         for (OrderDetail orderDetail: orderDetailList) {
             totalPrice+=orderDetail.getProduct().getPrice();
@@ -28,17 +28,22 @@ public class Order {
     }
 
     /**
-     * @return this method calculates the estimated preparation time of the whole order
+     * @return this method calculates the estimated preparation time of the whole order. Estimated preparation time expressed in minutes.
      */
     public Double getEstimatedPreparationTime(){
-        return null;
+        Double estimatedPreparationTime=0.0;
+        for (OrderDetail orderDetail :
+                this.orderDetailList) {
+            estimatedPreparationTime+=orderDetail.getProduct().getPreparationTime();
+        }
+        return estimatedPreparationTime;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -56,10 +61,6 @@ public class Order {
 
     public void setOrderDetailList(Collection<OrderDetail> orderDetailList) {
         this.orderDetailList = orderDetailList;
-    }
-
-    public void addOrderDetail(OrderDetail orderDetail) {
-        this.orderDetailList.add(orderDetail);
     }
 
     public String getNote() {
