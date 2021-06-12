@@ -3,13 +3,15 @@ package repositories.temporaryRepos;
 import model.inventory.Ingredient;
 import repositories.IRepository;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
 public class IngredientTempRepo implements IRepository<Ingredient,Integer> {
 
     static IngredientTempRepo instance;
-    Map<Integer,Ingredient> list =new HashMap<>();
+    Map<Integer,Ingredient> map =new HashMap<>();
+    Integer lastID = 0;
     private Ingredient i;
 
 
@@ -22,28 +24,29 @@ public class IngredientTempRepo implements IRepository<Ingredient,Integer> {
     }
     @Override
     public void create(Ingredient model) {
-        list.put(model.getId(),model);
+        model.setId(lastID++);
+        map.put(model.getId(),model);
     }
 
     @Override
     public void delete(Integer id) {
-        list.remove(id);
+        map.remove(id);
     }
 
     @Override
     public Ingredient get(Integer id) {
-        return list.get(id);
+        return map.get(id);
     }
 
     @Override
     public void update(Ingredient model) {
-        list.remove(model.getId());
-        list.put(model.getId(), model);
+        map.remove(model.getId());
+        map.put(model.getId(), model);
     }
 
     @Override
-    public Map<Integer,Ingredient> getAll() {
-        return list;
+    public Collection<Ingredient> getAll() {
+        return map.values();
     }
 
 }
